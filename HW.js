@@ -1,159 +1,96 @@
-/*
-*******1. Дан код:*********
-var a = 1, b = 1, c, d;
-1) c = ++a; alert(c);           // 2
-2) d = b++; alert(d);           // 1
-3) c = (2+ ++a); alert(c);      // 5
-4) d = (2+ b++); alert(d);      // 4
-5) alert(a);                    // 3
-6) alert(b);                    // 3
-Почему код даёт именно такие результаты?
-
-1. у переременной *а* стоит префиксный инкримент соответственно при ее первом вызове
-она увеличиваеться на единицу *а=2* так как *с=а* то *с=2*
-
-2. переменная "b" не увеличиться на 1 при первом обращении так как стоит постфиксный инкримент, она увеличеться при следующем обращении к ней поэтому alert(d) выводит 1
-
-3. Это можно записать так "c = 2+3" так как "a" сейчас равна 2ум то в этом примере она увеличеваеться еще на 1 так как стоит префикс++
-соответственно alert(c) выдает значение 5
-
-4. "b" сейчас хранит значение 2 в примере она не увеличеться на 1 так как стоит постфикс++
-соответственно это можно записать как
-d = 2+2 и alert(d) выдаст 4
-
-5. последний раз "a" увеличелась в 3 примере
-ее значение было равно 3 поэтому alert(a) выдает нам тройку
-
-6. "b" у нас увеличилась после выполнения 4 примера и значение ее до момента выполнения было равным 2 после выполнения оно будет равным 3 поэтому alert(b) выдает 3
-********************************************
-
-2. Чему будет равен x в примере ниже?
-var a = 2;
-var x = 1 + (a *= 2);
-Это можно записать как: x = 1 + (a = a * 2)
-x = 5
-**********************************************/
-
-/* Задание №3*/
-
-var a = parseInt(prompt('Введите число'));
-var b = parseInt(prompt('Введите число'));
-if (a > 0 && b > 0) {
-    alert(a - b)
-}
-else if (a < 0 && b < 0) {
-    alert(a * b)
-}
-else {
-    alert(a + b)
-}
-
-/* Задание №3 ###4*/
-
-var c = parseInt(prompt('Введите число от 0 до 15'));
-switch (c) {
-    case 1:
-        alert('1')
-    case 2:
-        alert('2')
-    case 3:
-        alert('3')
-    case 4:
-        alert('4')
-    case 5:
-        alert('5')
-    case 6:
-        alert('6')
-    case 7:
-        alert('7')
-    case 8:
-        alert('8')
-    case 9:
-        alert('9')
-    case 10:
-        alert('10')
-    case 11:
-        alert('11')
-    case 12:
-        alert('12')
-    case 13:
-        alert('13')
-    case 14:
-        alert('14')
-    case 15:
-        alert('15')
-        break;
-    default:
-        break;
-}
-
-/* Задание №3 ###5*/
-
-var d = 5;
-var e = 5;
-
-function Plus(d, e) {
-    //return d + e;
-    result = d + e;
-    return alert(result);
-}
-
-function Minus(d, e) {
-    //return d - e;
-    result = d - e;
-    return alert(result);
-}
-
-function Devide(d, e) {
-    //return d / e;
-    result = d / e;
-    return alert(result);
-}
-
-function Multiply(d, e) {
-    //return d / e;
-    result = d + e;
-    return alert(result);
-}
-
-/* Задание №3 ###6*/
-
-function mathOperation(arg1, arg2, operation) {
-    switch (operation) {
-        case 'Сложить':
-            resultOperation = arg1 + arg2;
-            break;
-        case 'Вычесть':
-            resultOperation = arg1 - arg2;
-            break;
-        case 'Разделить':
-            resultOperation = arg1 / arg2;
-            break;
-        case 'Умножить':
-            resultOperation = arg1 * arg2;
-            break;
-        default:
-            alert('Нет такой операции возможно где-ошибка')
-            break;
-    }
-}
-
-/* Задание №3 ###7*/
-
-/* Значение null представляет отсутствие какого-либо объектного значения - то есть фактически это 'ничего', а 0 это уже кокретное значение. Я так считаю */
-
-/* Задание №3 ###8*/
-
-function power(val, pow) {
-
-    if (pow <= 1) {
-        return val;
+/* 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100. */
+var count = 2;
+var x = 1;
+var ddd = 0;
+while (count !== 100) {
+    var res = count / x;
+    if (count >= 3) {
+        if ((count / x) % 1 == 0 || count / x == count || count / x == 1) {
+            ddd++;
+        }
+        if (ddd > 2) {
+            count++;
+            x = 0;
+            ddd = 0;
+        }
+        if (ddd >= 2 && x == count) {
+            console.log(count);
+            count++;
+            x = 0;
+            ddd = 0;
+        }
+        x++;
     }
     else {
-        return power((val + val), pow - 1)
+        console.log(count);
+        count++;
     }
 }
-var value = +prompt('Введите чисто');
-var valuePower = +prompt('Введите степень');
-var resultPower = power(value, valuePower);
-alert('Число ' + value + ' в степени ' + valuePower + ' = ' + resultPower);
+
+/* 2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. */
+
+var listProduct = [{ name: 'Лодка', price: 12000 },
+{ name: 'Катер', price: 19000 },
+{ name: 'Лодка электро-мотор', price: 23000 },
+{ name: 'Катер электро', price: 31000 }];
+
+var shoppingBasket = [];
+var list = '';
+var numberList = 0;
+
+alert('Выбирете товары из списка.')
+
+listProduct.forEach(nameProduct => {
+
+    list += `${++numberList} - ${nameProduct.name}: ${nameProduct.price}p,\n`;
+})
+var exit = false;
+while (!exit) {
+    var numberProduct = +prompt(`${list} Введите номер товара. Закончив покупки введите 0'`)
+    switch (numberProduct) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            shoppingBasket.push(listProduct[--numberProduct]);
+            break;
+        case 0:
+            if (shoppingBasket.length === 0) {
+
+                alert('Вы не выбрали товар.Корзина пуста');
+
+            }
+            else {
+                exit = true;
+                var sum = 0;
+                numberList = 0;
+                var ListTotalPrice = '';
+                for (let index = 0; index < shoppingBasket.length; index++) {
+
+                    sum += shoppingBasket[index].price;
+                    ListTotalPrice += `${++numberList} - ${shoppingBasket[index].name}: ${shoppingBasket[index].price}p,\n`;
+                }
+                alert(`Спасибо что посетили наш магазин. Товаров в корзине : ${shoppingBasket.length}\n${ListTotalPrice}\n на сумму ${sum}р`)
+            }
+            break;
+        default:
+            alert('Нет товара с таким номером. Введите корректные данные')
+            break;
+    }
+}
+
+
+/* 4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+for(…){// здесь пусто} */
+
+for (let index = 0; index <= 9; console.log(index++)) {
+
+}
+
+/* 5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5: */
+
+var pyramid = '';
+for (var i = 0; i <= 20; i++) {
+    pyramid += '*';
+    console.log(pyramid);
+}
