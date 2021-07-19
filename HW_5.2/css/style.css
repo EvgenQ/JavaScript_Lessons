@@ -1,31 +1,34 @@
-
-h1{
+h1 {
 	text-align: center;
 }
-.Product{
+
+.Product {
 	font-size: 30px;
 	margin-left: 800px;
 	width: 290px;
 	position: absolute;
 }
-.productId{
+
+.product {
 	height: 30px;
 	margin-bottom: 15px;
 	margin-right: 15px;
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	text-align: center;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
 	font-size: 24px;
 	padding: 5px;
 	width: 150px;
+
 }
-.price{
+
+.price {
 	height: 30px;
 	margin-bottom: 15px;
 	margin-right: 15px;
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	text-align: center;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
 	font-size: 24px;
@@ -35,59 +38,62 @@ h1{
 
 
 
-.Btn:hover{
+.Btn:hover {
 	margin-bottom: 5px;
 	height: 30px;
 	background-color: rgb(6, 119, 44);
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
 	font-size: 24px;
 }
-.Btn:active{
+
+.Btn:active {
 
 	margin-bottom: 5px;
 	height: 30px;
 	background: rgb(0, 255, 85);
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
-	background: rgb(152,15,0);
+	background: rgb(152, 15, 0);
 	font-size: 24px;
 }
-.Btn{
 
-	margin-bottom: 5px;
+.Btn {
+
+	margin-bottom: 15px;
 	height: fit-content;
 	background-color: rgb(0, 255, 85);
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
 	font-size: 30px;
 
-	
+
 }
 
-.BtnComleted{
+.BtnComleted {
 	height: fit-content;
 	padding: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	text-align: center;
 	width: max-content;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
 	background-color: rgb(11, 2, 138);
 	color: wheat;
-	width: 400px;
+	width: 412px;
 	font-size: 30px;
 }
-.ShowTotalPrice{
+
+.ShowTotalPrice {
 	height: fit-content;
 	padding: 5px;
 	margin-bottom: 5px;
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 10px;
 	text-align: center;
 	width: max-content;
 	box-shadow: 5px 5px 10px rgb(19, 1, 1);
@@ -96,16 +102,16 @@ h1{
 	width: 400px;
 	font-size: 30px;
 }
-.BtnComleted:hover{
+
+.BtnComleted:hover {
 	background-color: rgb(2, 138, 108);
 }
 
-.containerGeneral, .col{
+.containerGeneral,
+.col {
 	display: flex;
-  flex-wrap: wrap;
-  height: fit-content;
-  align-content: flex-start;
-  
+	flex-wrap: wrap;
+	height: fit-content;
+	align-content: flex-start;
+
 }
-
-
